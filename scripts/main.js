@@ -140,7 +140,7 @@ const products = [
         material: "Argent",
         description: "Une勺子 en argent poli transformée en bague qui capture et reflète la lumière avec subtilité.",
         image: "imgs/Egypte 1.jpg",
-        images: ["imgs/Egypte 1.jpg", "imgs/Egypte 1.jpg", "imgs/Egypte 3.jpg"],
+        images: ["imgs/Egypte 1.jpg", "imgs/Egypte 2.JPG", "imgs/Egypte 3.JPG"],
         category: "argent"
     },
     {
