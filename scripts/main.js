@@ -785,11 +785,10 @@ function initLazyLoading() {
 // Initialize lazy loading
 initLazyLoading();
 
-// ===== ACCESSIBILITY ENHANCEMENTS =====
 
 
-// Initialize accessibility features
-initAccessibility();
+
+
 
 // ===== PERFORMANCE OPTIMIZATIONS =====
 function initPerformanceOptimizations() {
