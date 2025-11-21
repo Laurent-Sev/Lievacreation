@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIEVA CREATION - Bagues Artisanales à partir de Cuillères</title>
+    <meta name="description" content="Découvrez nos bagues artisanales uniques transformées à partir de勺子. Chaque pièce raconte une histoire, façonnée avec savoir-faire et passion à l'atelier LIEVA CREATION.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#accueil" class="logo-link">LIEVA CREATION</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#galerie" class="nav-link">Nos Créations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#savoir-faire" class="nav-link">Notre Savoir-faire</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#video" class="nav-link">Voir la Création</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">LIEVA CREATION</h1>
+            <p class="hero-subtitle fade-in">L'art de donner une seconde vie</p>
+            <a href="#galerie" class="btn btn-primary fade-in">Découvrir nos créations</a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Transformons l'ordinaire en extraordinaire</h2>
+                    <p>Dans l'atelier LIEVA CREATION, chaque勺子 raconte une histoire. Avec passion et savoir-faire, nous transformé ces objets du quotidien en bijoux uniques qui portent en eux l'empreinte de l'artisanat authentique.</p>
+                    <p>Chaque bague est façonnée à la main, mettant en valeur la beauté originale des couverts tout en leur offrant une nouvelle destinée. Notre cintreuse de précision nous permet de créer des pièces aux formes harmonieuses qui épousent parfaitement le doigt.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>30+</h3>
+                            <p>Créations uniques</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Artisanal</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Recyclé</h3>
+                            <p>Matières nobles</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="imgs/workshop_tools_5.jpg" alt="Outils de bijouterie artisanale" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Créations</h2>
+                <p>Chaque bague est une œuvre d'art unique, façonnée avec amour et précision</p>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="argent">Argent</button>
+                <button class="filter-btn" data-filter="acier">Acier</button>
+                <button class="filter-btn" data-filter="cuivre">Cuivre</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Les produits seront générés par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="savoir-faire" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Savoir-faire</h2>
+                <p>Un processus artisanal entre tradition et innovation</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Sélection</h3>
+                        <p>Nous choisit soigneusement chaque勺子 pour ses qualités esthétiques et sa résistance. Argent, acier ou cuivre, chaque métal a ses spécificités.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="imgs/gallery_display_9.jpg" alt="Sélection de勺子" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Transformation</h3>
+                        <p>La cuvette est soigneusement découpée, puis le manche est préparé et façonné. Notre cintreuse de précision permet de créer la courbe parfaite pour un ajustement idéal au doigt.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="imgs/workshop_tools_4.jpg" alt="Transformation artisanale" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Finition</h3>
+                        <p>Polissage, lustrage et contrôle qualité. Chaque bague est vérifiée pour s'assurer qu'elle répond à nos standards d'excellence artisanale.</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="imgs/gallery_display_3.jpg" alt="Finition des bagues" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Voir la Création</h2>
+                <p>Découvrez le processus de transformation</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper" id="video-wrapper">
+                    <img src="imgs/contact_background_5.jpg" alt="Aperçu de la vidéo de création" class="video-thumbnail" id="video-thumbnail">
+                    <button class="play-button" id="play-button">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <circle cx="30" cy="30" r="30" fill="rgba(161, 122, 93, 0.9)"/>
+                            <path d="M23 20L23 40L40 30L23 20Z" fill="white"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="video-description">En quelques minutes, observez la métamorphose d'une cuillère en bague unique. Une technique artisanale qui révèle toute la beauté cachée des objets du quotidien.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Contactez-nous</h2>
+                    <p>Intéressé(e) par l'une de nos créations ? N'hésitez pas à nous contacter. Chaque bague est unique et disponible sur demande.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@lieva-creation.fr">contact@lieva-creation.fr</a></p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>Atelier</h4>
+                            <p>LIEVA CREATION<br>Artisanat de bijoux</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h4>Commandes</h4>
+                            <p>Sur demande uniquement<br>Paiement par virement ou espèces</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone (optionnel)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="commande">Commande d'une bague</option>
+                                <option value="info">Demande d'informations</option>
+                                <option value="personnalisation">Personnalisation</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre demande..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>LIEVA CREATION</h3>
+                    <p>L'art de donner une seconde vie</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#accueil">Accueil</a></li>
+                            <li><a href="#galerie">Nos Créations</a></li>
+                            <li><a href="#savoir-faire">Savoir-faire</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@lieva-creation.fr">contact@lieva-creation.fr</a></li>
+                            <li>Atelier artisanal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LIEVA CREATION. Tous droits réservés. | Créations artisanales uniques</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <div class="video-embed" id="video-embed">
+                <!-- La vidéo sera insérée ici -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
