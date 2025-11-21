@@ -90,7 +90,7 @@ const products = [
         material: "Cuivre",
         description: "Le cuivre氧化é naturellement offre cette teinte chaleureuse si caractéristique des pièces authentiques.",
         image: "imgs/chic 2.jpg",
-        images: ["imgs/chic 2.jpg", "imgs/workshop_tools_5.jpg", "imgs/ambre 3.jpg"],
+        images: ["imgs/chic 2.jpg", "imgs/chic 1.jpg", "imgs/ambre 3.jpg"],
         category: "cuivre"
     },
     {
@@ -100,7 +100,7 @@ const products = [
         material: "Acier",
         description: "L'élégance industrielle de l'acier stainless sublimée par un travail artisanal précis.",
         image: "imgs/eve 2.jpg",
-        images: ["imgs/eve 2.jpg", "imgs/workshop_tools_4.jpg", "imgs/gallery_display_9.jpg"],
+        images: ["imgs/eve 2.jpg", "imgs/eve 1.jpg", "imgs/gallery_display_9.jpg"],
         category: "acier"
     },
     {
@@ -110,7 +110,7 @@ const products = [
         material: "Argent",
         description: "Une勺子 vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
         image: "imgs/Clé de sol 1.jpg",
-        images: ["imgs/Clé de sol 1.jpg", "imgs/Clé de sol 2.jpg", "imgs/Clé de sol 3.jpg"],
+        images: ["imgs/Clé de sol 1.jpg", "imgs/Clé de sol 2.JPG", "imgs/Clé de sol 3.JPG"],
         category: "argent"
     },
     {
@@ -120,7 +120,7 @@ const products = [
         material: "Cuivre",
         description: "La chaleur du cuivre unveil des nuances terres qui évoluent avec le temps pour un aspect toujours plus authentique.",
         image: "imgs/Feuille d argent 1.jpg",
-        images: ["imgs/Feuille d argent 1.jpg", "imgs/Feuille d argent 2.jpg", "imgs/Feuille d argent 3.jpg"],
+        images: ["imgs/Feuille d argent 1.jpg", "imgs/Feuille d argent 2.JPG", "imgs/Feuille d argent 3.JPG"],
         category: "cuivre"
     },
     {
@@ -130,7 +130,7 @@ const products = [
         material: "Acier",
         description: "La pureté des lignes moderns Meets l'authenticité du travail artisanal pour un résultat épuré.",
         image: "imgs/Reine 1.jpg",
-        images: ["imgs/Reine 1.jpg", "imgs/Reine 2.jpg", "imgs/Reine 3.jpg"],
+        images: ["imgs/Reine 1.jpg", "imgs/Reine 2.JPG", "imgs/Reine 3.JPG"],
         category: "acier"
     },
     {
@@ -138,7 +138,7 @@ const products = [
         name: "EGYPTE",
         price: "48€",
         material: "Argent",
-        description: "Une勺子 en argent poli transformée en bague qui capture et reflète la lumière avec subtilité.",
+        description: "Une bague en argent poli transformée en bague qui capture et reflète la lumière avec subtilité.",
         image: "imgs/Egypte 1.jpg",
         images: ["imgs/Egypte 1.jpg", "imgs/Egypte 2.JPG", "imgs/Egypte 3.JPG"],
         category: "argent"
@@ -150,7 +150,7 @@ const products = [
         material: "Cuivre",
         description: "La patine naturelle du cuivre révèle des tons chauds évoquant les couleurs de l'automne.",
         image: "imgs/Couronne 1.jpg",
-        images: ["imgs/Couronne 1.jpg", "imgs/Couronne 2.jpg", "imgs/Couronne 3.jpg"],
+        images: ["imgs/Couronne 1.jpg", "imgs/Couronne 2.JPG", "imgs/Couronne 3.JPG"],
         category: "cuivre"
     },
     {
@@ -160,7 +160,7 @@ const products = [
         material: "Acier",
         description: "Le raffinement de l'aciess stainless Combine avec la simplicité d'un design intemporel.",
         image: "imgs/Guitare argent 1.jpg",
-        images: ["imgs/Guitare argent 1.jpg", "imgs/Guitare argent 2.jpg", "imgs/Guitare argent 3.jpg"],
+        images: ["imgs/Guitare argent 1.jpg", "imgs/Guitare argent 2.JPG", "imgs/Guitare argent 3.JPG"],
         category: "acier"
     },
     {
