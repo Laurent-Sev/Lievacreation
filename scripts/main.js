@@ -108,7 +108,7 @@ const products = [
         name: "CLE DE SOL",
         price: "38€",
         material: "Argent",
-        description: "Une勺子 vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
+        description: "Une bague vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
         image: "imgs/Clé de sol 1.jpg",
         images: ["imgs/Clé de sol 1.jpg", "imgs/Clé de sol 2.jpg", "imgs/Clé de sol 3.jpg"],
         category: "argent"
@@ -133,7 +133,7 @@ const products = [
         images: ["imgs/Reine 1.jpg", "imgs/Reine 2.jpg", "imgs/Reine 3.jpg"],
         category: "acier"
     },
-    {
+  {
         id: 7,
         name: "EGYPTE",
         price: "48€",
