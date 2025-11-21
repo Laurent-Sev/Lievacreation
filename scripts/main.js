@@ -789,7 +789,7 @@ initLazyLoading();
 
 
 // Initialize accessibility features
-initAccessibility();
+
 
 // ===== PERFORMANCE OPTIMIZATIONS =====
 function initPerformanceOptimizations() {
