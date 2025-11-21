@@ -108,7 +108,7 @@ const products = [
         name: "CLE DE SOL",
         price: "38€",
         material: "Argent",
-        description: "Une bague vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
+        description: "Une勺子 vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
         image: "imgs/Clé de sol 1.jpg",
         images: ["imgs/Clé de sol 1.jpg", "imgs/Clé de sol 2.jpg", "imgs/Clé de sol 3.jpg"],
         category: "argent"
@@ -133,14 +133,14 @@ const products = [
         images: ["imgs/Reine 1.jpg", "imgs/Reine 2.jpg", "imgs/Reine 3.jpg"],
         category: "acier"
     },
-  {
+    {
         id: 7,
         name: "EGYPTE",
         price: "48€",
         material: "Argent",
         description: "Une勺子 en argent poli transformée en bague qui capture et reflète la lumière avec subtilité.",
         image: "imgs/Egypte 1.jpg",
-        images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.jpg"],
+        images: ["imgs/Egypte 1.jpg", "imgs/Egypte 1.jpg", "imgs/Egypte 3.jpg"],
         category: "argent"
     },
     {
@@ -789,7 +789,7 @@ initLazyLoading();
 
 
 // Initialize accessibility features
-
+initAccessibility();
 
 // ===== PERFORMANCE OPTIMIZATIONS =====
 function initPerformanceOptimizations() {
