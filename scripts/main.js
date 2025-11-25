@@ -80,7 +80,7 @@ const products = [
         material: "Argent",
         description: "Une bague délicate façonnée à partir d'une勺子 en argent massif, présentant des reflets naturels unique.",
         image: "imgs/ambre 2.jpg",
-        images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.jpg"],
+        images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.JPG"],
         category: "argent"
     },
     {
@@ -90,7 +90,7 @@ const products = [
         material: "Cuivre",
         description: "Le cuivre氧化é naturellement offre cette teinte chaleureuse si caractéristique des pièces authentiques.",
         image: "imgs/chic 2.jpg",
-        images: ["imgs/chic 2.jpg", "imgs/chic 1.jpg", "imgs/ambre 3.jpg"],
+        images: ["imgs/chic 2.jpg", "imgs/chic 1.jpg", "imgs/chic 3.JPG"],
         category: "cuivre"
     },
     {
@@ -99,8 +99,8 @@ const products = [
         price: "40€",
         material: "Acier",
         description: "L'élégance industrielle de l'acier stainless sublimée par un travail artisanal précis.",
-        image: "imgs/eve 2.jpg",
-        images: ["imgs/eve 2.jpg", "imgs/eve 1.jpg", "imgs/gallery_display_9.jpg"],
+        image: "imgs/eve 1.jpg",
+        images: ["imgs/eve 1.jpg", "imgs/eve 2.JPG", "imgs/eve 3.JPG"],
         category: "acier"
     },
     {
@@ -165,93 +165,102 @@ const products = [
     },
     {
         id: 10,
-        name: "Noblesse Antique",
+        name: "ANGE",
         price: "50€",
         material: "Argent",
-        description: "Une勺子 d'époque révèle toute sa noblesse transformée en bague au cachet authentique.",
-        image: "imgs/workshop_tools_7.webp",
-        images: ["imgs/workshop_tools_7.webp", "imgs/spoon_rings_hero_6.jpg", "imgs/spoon_rings_hero_9.jpg"],
+        description: "Une bague d'époque révèle toute sa noblesse transformée en bague au cachet authentique.",
+        image: "imgs/ange 1.jpg",
+        images: ["imgs/ange 1.jpg", "imgs/ange 2.JPG", "imgs/ange 3.JPG"],
         category: "argent"
     },
     {
         id: 11,
-        name: "Éclat Doré",
+        name: "ARABESQUE",
         price: "36€",
         material: "Cuivre",
         description: "Lecuivre poli crée un éclar naturel qui illumine chaque gestes de la main.",
-        image: "imgs/contact_background_7.jpg",
+        image: "imgs/arabesque 1.jpg",
+        images: ["imgs/arabesque 1.jpg", "imgs/arabesque 2.JPG", "imgs/arabesque 3.JPG"],
         category: "cuivre"
     },
     {
         id: 12,
-        name: "Technologie Art",
+        name: "BELLA",
         price: "41€",
         material: "Acier",
-        description: "Lunion harmonieuse entre technologie moderne et savoir-faire artisanal traditionnels.",
-        image: "imgs/contact_background_0.jpg",
+        description: "Lunion harmonieuse entre technologie moderne et savoir-faire artisanal traditionnels.",        
+        image: "imgs/bella 1.jpg",
+        images: ["imgs/bella 1.jpg", "imgs/bella 2.JPG", "imgs/bella 3.JPG"],
         category: "acier"
     },
     {
         id: 13,
-        name: "Perle d'Argent",
+        name: "ALICE",
         price: "47€",
         material: "Argent",
         description: "La douceur et l'élégance d'une勺子 en argent massif transformée avec délicatesse.",
-        image: "imgs/spoon_rings_hero_6.jpg",
+        image: "imgs/alice 1.jpg",
+        images: ["imgs/alice 1.jpg", "imgs/alice 2.JPG", "imgs/alice 3.JPG"],
         category: "argent"
     },
     {
         id: 14,
-        name: "Ambre Cuivré",
+        name: "BRUXELLES",
         price: "34€",
         material: "Cuivre",
         description: "Les nuances ambrées du cuivre au cours de son processus d'oxydation naturelle.",
-        image: "imgs/spoon_rings_hero_8.jpg",
+        image: "imgs/bruxelles 1.jpg",
+        images: ["imgs/bruxelles 1.jpg", "imgs/bruxelles 2.JPG", "imgs/bruxelles 3.JPG"],
         category: "cuivre"
     },
     {
         id: 15,
-        name: "Éclat Froid",
+        name: "CHAT",
         price: "39€",
         material: "Acier",
         description: "L'éclat froid et élégant de l'aciess stainlesspolishé avec soin artisanal.",
-        image: "imgs/gallery_display_9.jpg",
+        image: "imgs/chat 1.jpg",
+        images: ["imgs/chat 1.jpg", "imgs/chat 2.JPG", "imgs/chat 3.JPG"],
         category: "acier"
     },
     {
         id: 16,
-        name: "Lunière Lunaire",
+        name: "CHEVAL",
         price: "49€",
         material: "Argent",
         description: "Les reflets lunaires d'une勺子 en argent sillage transformée en bague mystique.",
-        image: "imgs/gallery_display_3.jpg",
+        image: "imgs/cheval 1.jpg",
+        images: ["imgs/cheval 1.jpg", "imgs/cheval 2.JPG", "imgs/cheval 3.JPG"],
         category: "argent"
     },
     {
         id: 17,
-        name: "Terre Cuite",
+        name: "CHLO",
         price: "33€",
         material: "Cuivre",
         description: "La chaleur terre à terre du cuivre avec ses nuances ocres et rougeatres naturelles.",
-        image: "imgs/gallery_display_4.jpg",
+        image: "imgs/chloe 1.jpg",
+        images: ["imgs/chloe 1.jpg", "imgs/chloe 2.JPG", "imgs/chloe 3.JPG"],
         category: "cuivre"
     },
     {
         id: 18,
-        name: "Acier Brillant",
+        name: "DAMIER",
         price: "40€",
         material: "Acier",
         description: "Le brillant mirror-like de l'aciess obtenu par un polissage artisanal patient.",
-        image: "imgs/contact_background_5.jpg",
+        image: "imgs/damier 1.jpg",
+        images: ["imgs/damier 1.jpg", "imgs/damier 2.JPG", "imgs/damier 3.JPG"],
         category: "acier"
     },
     {
         id: 19,
-        name: "Perle Mystique",
+        name: "FEUILLE OR",
         price: "46€",
         material: "Argent",
         description: "La profondeur mysté ese d'une勺子 en argent patiné par le temps et l'usage.",
-        image: "imgs/spoon_rings_hero_9.jpg",
+        image: "imgs/feuille or 1.jpg",
+        images: ["imgs/feuille or 1.jpg", "imgs/feuille or 2.JPG", "imgs/feuille or 3.JPG"],
         category: "argent"
     },
     {
@@ -806,7 +815,7 @@ function initPerformanceOptimizations() {
     // Preload critical images
     const criticalImages = [
         'imgs/spoon_rings_hero_9.jpg',
-        'imgs/workshop_tools_5.jpg'
+        'imgs/eve 1.jpg'
     ];
     
     criticalImages.forEach(src => {
