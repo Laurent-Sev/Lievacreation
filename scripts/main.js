@@ -77,292 +77,301 @@ const products = [
         id: 1,
         name: "AMBRE",
         price: "30€",
-        material: "Argent",
+        material: "Argenté",
         description: "Une bague délicate façonnée à partir d'une勺子 en argent massif, présentant des reflets naturels unique.",
         image: "imgs/ambre 2.jpg",
         images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.JPG"],
-        category: "argent"
+        category: "argenté"
     },
     {
         id: 2,
         name: "CHIC",
         price: "35€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "Le cuivre氧化é naturellement offre cette teinte chaleureuse si caractéristique des pièces authentiques.",
         image: "imgs/chic 2.jpg",
         images: ["imgs/chic 2.jpg", "imgs/chic 1.jpg", "imgs/chic 3.JPG"],
-        category: "cuivre"
+        category: "argenté"
     },
     {
         id: 3,
         name: "EVE",
         price: "40€",
-        material: "Acier",
+        material: "Argenté",
         description: "L'élégance industrielle de l'acier stainless sublimée par un travail artisanal précis.",
         image: "imgs/eve 1.jpg",
         images: ["imgs/eve 1.jpg", "imgs/eve 2.JPG", "imgs/eve 3.JPG"],
-        category: "acier"
+        category: "argenté"
     },
     {
         id: 4,
         name: "CLE DE SOL",
         price: "38€",
-        material: "Argent",
+        material: "Argenté",
         description: "Une勺子 vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
         image: "imgs/Clé de sol 1.jpg",
         images: ["imgs/Clé de sol 1.jpg", "imgs/Clé de sol 2.JPG", "imgs/Clé de sol 3.JPG"],
-        category: "argent"
+        category: "argenté"
     },
     {
         id: 5,
         name: "FEUILLE D'ARGENT",
         price: "32€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "La chaleur du cuivre unveil des nuances terres qui évoluent avec le temps pour un aspect toujours plus authentique.",
         image: "imgs/Feuille d argent 1.jpg",
         images: ["imgs/Feuille d argent 1.jpg", "imgs/Feuille d argent 2.JPG", "imgs/Feuille d argent 3.JPG"],
-        category: "cuivre"
+        category: "argenté"
     },
     {
         id: 6,
         name: "REINE",
         price: "42€",
-        material: "Acier",
+        material: "Argenté",
         description: "La pureté des lignes moderns Meets l'authenticité du travail artisanal pour un résultat épuré.",
         image: "imgs/Reine 1.jpg",
         images: ["imgs/Reine 1.jpg", "imgs/Reine 2.JPG", "imgs/Reine 3.JPG"],
-        category: "acier"
+        category: "argenté"
     },
     {
         id: 7,
         name: "EGYPTE",
         price: "48€",
-        material: "Argent",
+        material: "Argenté",
         description: "Une bague en argent poli transformée en bague qui capture et reflète la lumière avec subtilité.",
         image: "imgs/Egypte 1.jpg",
         images: ["imgs/Egypte 1.jpg", "imgs/Egypte 2.JPG", "imgs/Egypte 3.JPG"],
-        category: "argent"
+        category: "argenté"
     },
     {
         id: 8,
         name: "COURONNE",
         price: "35€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "La patine naturelle du cuivre révèle des tons chauds évoquant les couleurs de l'automne.",
         image: "imgs/Couronne 1.jpg",
         images: ["imgs/Couronne 1.jpg", "imgs/Couronne 2.JPG", "imgs/Couronne 3.JPG"],
-        category: "cuivre"
+        category: "argenté"
     },
     {
         id: 9,
         name: "GUITARE ARGENT",
         price: "38€",
-        material: "Acier",
+        material: "Argenté",
         description: "Le raffinement de l'aciess stainless Combine avec la simplicité d'un design intemporel.",
         image: "imgs/Guitare argent 1.jpg",
         images: ["imgs/Guitare argent 1.jpg", "imgs/Guitare argent 2.JPG", "imgs/Guitare argent 3.JPG"],
-        category: "acier"
+        category: "argenté"
     },
     {
         id: 10,
         name: "ANGE",
         price: "50€",
-        material: "Argent",
+        material: "argenté",
         description: "Une bague d'époque révèle toute sa noblesse transformée en bague au cachet authentique.",
         image: "imgs/ange 1.jpg",
         images: ["imgs/ange 1.jpg", "imgs/ange 2.JPG", "imgs/ange 3.JPG"],
-        category: "argent"
+        category: "argenté"
     },
     {
         id: 11,
         name: "ARABESQUE",
         price: "36€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "Lecuivre poli crée un éclar naturel qui illumine chaque gestes de la main.",
         image: "imgs/arabesque 1.jpg",
         images: ["imgs/arabesque 1.jpg", "imgs/arabesque 2.JPG", "imgs/arabesque 3.JPG"],
-        category: "cuivre"
+        category: "argenté"
     },
     {
         id: 12,
         name: "BELLA",
         price: "41€",
-        material: "Acier",
+        material: "Argenté",
         description: "Lunion harmonieuse entre technologie moderne et savoir-faire artisanal traditionnels.",        
         image: "imgs/bella 1.jpg",
         images: ["imgs/bella 1.jpg", "imgs/bella 2.JPG", "imgs/bella 3.JPG"],
-        category: "acier"
+        category: "argenté"
     },
     {
         id: 13,
         name: "ALICE",
         price: "47€",
-        material: "Argent",
-        description: "La douceur et l'élégance d'une勺子 en argent massif transformée avec délicatesse.",
+        material: "Argenté",
+        description: "La douceur et l'élégance d'une bague en argent massif transformée avec délicatesse.",
         image: "imgs/alice 1.jpg",
-        images: ["imgs/alice 1.jpg", "imgs/alice 2.JPG", "imgs/alice 3.JPG"],
-        category: "argent"
+        images: ["imgs/alice 1.jpg", "imgs/alice 2.jpg", "imgs/alice 3.JPG"],
+        category: "argenté"
     },
     {
         id: 14,
         name: "BRUXELLES",
         price: "34€",
-        material: "Cuivre",
+        material: "doré",
         description: "Les nuances ambrées du cuivre au cours de son processus d'oxydation naturelle.",
         image: "imgs/bruxelles 1.jpg",
         images: ["imgs/bruxelles 1.jpg", "imgs/bruxelles 2.JPG", "imgs/bruxelles 3.JPG"],
-        category: "cuivre"
+        category: "doré"
     },
     {
         id: 15,
         name: "CHAT",
         price: "39€",
-        material: "Acier",
+        material: "Argenté",
         description: "L'éclat froid et élégant de l'aciess stainlesspolishé avec soin artisanal.",
         image: "imgs/chat 1.jpg",
         images: ["imgs/chat 1.jpg", "imgs/chat 2.JPG", "imgs/chat 3.JPG"],
-        category: "acier"
+        category: "argenté"
     },
     {
         id: 16,
         name: "CHEVAL",
         price: "49€",
-        material: "Argent",
+        material: "Argenté",
         description: "Les reflets lunaires d'une勺子 en argent sillage transformée en bague mystique.",
         image: "imgs/cheval 1.jpg",
         images: ["imgs/cheval 1.jpg", "imgs/cheval 2.JPG", "imgs/cheval 3.JPG"],
-        category: "argent"
+        category: "argenté"
     },
     {
         id: 17,
-        name: "CHLO",
+        name: "CHLOE",
         price: "33€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "La chaleur terre à terre du cuivre avec ses nuances ocres et rougeatres naturelles.",
         image: "imgs/chloe 1.jpg",
         images: ["imgs/chloe 1.jpg", "imgs/chloe 2.JPG", "imgs/chloe 3.JPG"],
-        category: "cuivre"
+        category: "Argenté"
     },
     {
         id: 18,
         name: "DAMIER",
         price: "40€",
-        material: "Acier",
+        material: "Argenté",
         description: "Le brillant mirror-like de l'aciess obtenu par un polissage artisanal patient.",
         image: "imgs/damier 1.jpg",
         images: ["imgs/damier 1.jpg", "imgs/damier 2.JPG", "imgs/damier 3.JPG"],
-        category: "acier"
+        category: "argenté"
     },
     {
         id: 19,
         name: "FEUILLE OR",
         price: "46€",
-        material: "Argent",
+        material: "doré",
         description: "La profondeur mysté ese d'une勺子 en argent patiné par le temps et l'usage.",
         image: "imgs/feuille or 1.jpg",
         images: ["imgs/feuille or 1.jpg", "imgs/feuille or 2.JPG", "imgs/feuille or 3.JPG"],
-        category: "argent"
+        category: "doré"
     },
     {
         id: 20,
-        name: "Cuivre Noble",
+        name: "MARGUERITE",
         price: "37€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "La noblesse naturelle du cuivre revealée par un travail respectueux de ses propriétés.",
-        image: "imgs/workshop_tools_5.jpg",
-        images: ["imgs/workshop_tools_5.jpg", "imgs/spoon_rings_hero_8.jpg", "imgs/contact_background_7.jpg"],
-        category: "cuivre"
+        image: "imgs/marguerite 1.jpg",
+        images: ["imgs/marguerite 1.jpg", "imgs/marguerite 2.JPG", "imgs/marguerite 3.JPG"],
+        category: "argenté"
     },
     {
         id: 21,
-        name: "Modernité Pure",
+        name: "FLEUR",
         price: "43€",
-        material: "Acier",
+        material: "Argenté",
         description: "La pureté des formes modernes s'allie à l'authenticité du matériau et du savoir-faire.",
-        image: "imgs/workshop_tools_4.jpg",
-        category: "acier"
+        image: "imgs/fleur 1.jpg",
+        images: ["imgs/fleur 1.jpg", "imgs/fleur 2.JPG", "imgs/fleur 3.JPG"],
+        category: "argenté"
     },
     {
         id: 22,
-        name: "Étoile d'Argent",
+        name: "PAPILLON",
         price: "51€",
-        material: "Argent",
+        material: "Argenté",
         description: "L'éclat Stellaire d'une勺子 premium en argent massif transformée avec excellence.",
-        image: "imgs/workshop_tools_7.webp",
-        category: "argent"
+        image: "imgs/papillon 1.jpg",
+        images: ["imgs/papillon 1.jpg", "imgs/papillon 2.JPG", "imgs/papillon 3.JPG"],
+        category: "argenté"
     },
     {
         id: 23,
-        name: "Ambre Majestueux",
+        name: "PIERRE",
         price: "38€",
-        material: "Cuivre",
+        material: "Argenté",
         description: "La majesté des tons ambrés que seul le temps peut révéler au cuivre de qualité.",
-        image: "imgs/contact_background_7.jpg",
-        category: "cuivre"
+        image: "imgs/pierre 1.jpg",
+        images: ["imgs/pierre 1.jpg", "imgs/pierre 2.JPG", "imgs/pierre 3.JPG"],
+        category: "argenté"
     },
     {
         id: 24,
-        name: "Titan Moderne",
+        name: "PRINCESSE",
         price: "44€",
-        material: "Acier",
+        material: "doré",
         description: "La robustesse du titane jointe à l'élégance d'un design contemporaine et épuré.",
-        image: "imgs/contact_background_0.jpg",
-        category: "acier"
+        image: "imgs/princesse 1.JPG",
+        images: ["imgs/princesse 1.JPG", "imgs/princesse 2.JPG", "imgs/princesse 3.JPG"],
+        category: "doré"
     },
     {
         id: 25,
-        name: "Clarté Crystalline",
+        name: "GUITARE OR",
         price: "52€",
-        material: "Argent",
+        material: "doré",
         description: "La clarté crystallise d'un argent de qualité supérieure transformé en bague d'exception.",
-        image: "imgs/spoon_rings_hero_6.jpg",
-        category: "argent"
+        image: "imgs/guitare or 1.jpg",
+        images: ["imgs/guitare or 1.JPG", "imgs/guitare or 2.JPG", "imgs/guitare or 3.JPG"],
+        category: "doré"
     },
     {
         id: 26,
-        name: "Soleil Cuivré",
+        name: "REINE OR",
         price: "36€",
-        material: "Cuivre",
+        material: "doré",
         description: "Les nuances solaires du cuivre qui évoluent au fil des saisons et de l'usage.",
-        image: "imgs/spoon_rings_hero_8.jpg",
-        category: "cuivre"
+        image: "imgs/reine or 1.jpg",
+        images: ["imgs/reine or 1.jpg", "imgs/reine or 2.JPG", "imgs/reine or 3.JPG"],
+        category: "doré"
     },
     {
         id: 27,
-        name: "Inox Élégance",
+        name: "ZEBRE",
         price: "41€",
-        material: "Acier",
+        material: "Argenté",
         description: "L'élégance Inoxydable de l'aciess avec un finish soigné qui resist aux épreuves du temps.",
-        image: "imgs/gallery_display_9.jpg",
-        category: "acier"
+        image: "imgs/zebre 1.jpg",
+        images: ["imgs/zebre 1.jpg", "imgs/zebre 2.JPG", "imgs/zebre 3.JPG"],
+        category: "argenté"
     },
     {
         id: 28,
-        name: "Platine Artisanale",
+        name: "VAGUE",
         price: "55€",
-        material: "Argent",
+        material: "Argenté",
         description: "La rareté du platine meeting l'artisanat d'exception pour une pièce decollection.",
-        image: "imgs/gallery_display_3.jpg",
-        category: "argent"
+        image: "imgs/vague 1.jpg",
+        images: ["imgs/vague 1.jpg", "imgs/vague 2.JPG", "imgs/vague 3.JPG"],
+        category: "argenté"
     },
     {
         id: 29,
-        name: "Feu Sacré",
+        name: "CHIC 2",
         price: "35€",
-        material: "Cuivre",
+        material: "argenté",
         description: "Les tons de feu sacré que révèle le cuivre lors de son oxydation naturelle contrôlée.",
-        image: "imgs/gallery_display_4.jpg",
-        category: "cuivre"
+        image: "imgs/chic2 1.jpg",
+        images: ["imgs/chic2 1.jpg", "imgs/chic2 2.JPG", "imgs/chic2 3.JPG"],
+        category: "argenté"
     },
     {
         id: 30,
-        name: "Acier Noble",
+        name: "LYS",
         price: "42€",
-        material: "Acier",
+        material: "Argenté",
         description: "La noblesse de l'aciess dévoilée par un processus artisanal qui elevate le matériau.",
-        image: "imgs/contact_background_5.jpg",
-        images: ["imgs/contact_background_5.jpg", "imgs/workshop_tools_4.jpg", "imgs/gallery_display_9.jpg"],
-        category: "acier"
+        image: "imgs/lys1 2.jpg",
+        images: ["imgs/lys1 2.jpg", "imgs/lys1 1.JPG", "imgs/lys1 3.JPG"],
+        category: "argenté"
     }
 ];
 
