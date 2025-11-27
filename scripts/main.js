@@ -80,7 +80,7 @@ const products = [
         material: "Argenté",
         description: "Une bague délicate façonnée à partir d'une勺子 en argent massif, présentant des reflets naturels unique.",
         image: "imgs/ambre 2.jpg",
-        images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.JPG"],
+        images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.jpg"],
         category: "argenté"
     },
     {
@@ -100,7 +100,7 @@ const products = [
         material: "Argenté",
         description: "L'élégance industrielle de l'acier stainless sublimée par un travail artisanal précis.",
         image: "imgs/eve 1.jpg",
-        images: ["imgs/eve 1.jpg", "imgs/eve 2.JPG", "imgs/eve 3.JPG"],
+        images: ["imgs/eve 1.jpg", "imgs/eve2.JPG", "imgs/eve 3.JPG"],
         category: "argenté"
     },
     {
