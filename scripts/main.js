@@ -170,7 +170,7 @@ const products = [
         material: "argenté",
         description: "Une bague d'époque révèle toute sa noblesse transformée en bague au cachet authentique.",
         image: "imgs/ange 1.jpg",
-        images: ["imgs/ange 1.jpg", "imgs/ange 2.JPG", "imgs/ange 3.JPG"],
+        images: ["imgs/ange 1.jpg", "imgs/ange2.JPG", "imgs/ange 3.JPG"],
         category: "argenté"
     },
     {
@@ -180,7 +180,7 @@ const products = [
         material: "Argenté",
         description: "Lecuivre poli crée un éclar naturel qui illumine chaque gestes de la main.",
         image: "imgs/arabesque 1.jpg",
-        images: ["imgs/arabesque 1.jpg", "imgs/arabesque 2.JPG", "imgs/arabesque 3.JPG"],
+        images: ["imgs/arabesque 1.jpg", "imgs/arabesque2.JPG", "imgs/arabesque3.JPG"],
         category: "argenté"
     },
     {
@@ -320,7 +320,7 @@ const products = [
         material: "doré",
         description: "La clarté crystallise d'un argent de qualité supérieure transformé en bague d'exception.",
         image: "imgs/guitare or 1.jpg",
-        images: ["imgs/guitare or 1.JPG", "imgs/guitare or 2.JPG", "imgs/guitare or 3.JPG"],
+        images: ["imgs/guitare or 1.jpg", "imgs/guitare or 2.JPG", "imgs/guitare or 3.JPG"],
         category: "doré"
     },
     {
@@ -369,8 +369,8 @@ const products = [
         price: "42€",
         material: "Argenté",
         description: "La noblesse de l'aciess dévoilée par un processus artisanal qui elevate le matériau.",
-        image: "imgs/lys1 2.jpg",
-        images: ["imgs/lys1 2.jpg", "imgs/lys1 1.JPG", "imgs/lys1 3.JPG"],
+        image: "imgs/lys12.jpg",
+        images: ["imgs/lys12.jpg", "imgs/lys1 1.JPG", "imgs/lys1 3.JPG"],
         category: "argenté"
     }
 ];
