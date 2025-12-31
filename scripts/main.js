@@ -1,1219 +1,842 @@
-/* ===== CSS VARIABLES ===== */
-:root {
-    /* Colors */
-    --primary-500: #A17A5D;
-    --primary-700: #745844;
-    --neutral-50: #FDFBF8;
-    --neutral-100: #F8F4EF;
-    --neutral-500: #8D7F73;
-    --neutral-900: #413A34;
-    --success: #5E855A;
-    --error: #C75D5D;
-   
-    /* Typography */
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Inter', sans-serif;
-   
-    /* Spacing */
-    --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 32px;
-    --space-xl: 48px;
-    --space-xxl: 96px;
-    --space-xxxl: 128px;
-   
-    /* Layout */
-    --container-max-width: 1280px;
-    --border-radius: 4px;
-    --shadow: 0 8px 24px rgba(116, 88, 68, 0.12);
-    --transition: all 0.3s ease-in-out;
+// ===== MAIN JAVASCRIPT FOR LIEVA CREATION =====
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all components
+    initNavigation();
+    initScrollEffects();
+    initGallery();
+    initVideoModal();
+    initContactForm();
+    initAnimations();
+});
+
+// ===== NAVIGATION =====
+function initNavigation() {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Smooth scrolling for anchor links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 }
- 
-/* ===== RESET & BASE ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+// ===== SCROLL EFFECTS =====
+function initScrollEffects() {
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'rgba(253, 251, 248, 0.98)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(253, 251, 248, 0.95)';
+        }
+    });
 }
- 
-html {
-    scroll-behavior: smooth;
-}
- 
-body {
-    font-family: var(--font-body);
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--neutral-900);
-    background-color: var(--neutral-50);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
- 
-/* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: var(--space-sm);
-}
- 
-h1 {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 1.1;
-}
- 
-h2 {
-    font-size: 48px;
-}
- 
-h3 {
-    font-size: 24px;
-}
- 
-p {
-    margin-bottom: var(--space-sm);
-    color: var(--neutral-500);
-}
- 
-a {
-    color: var(--primary-500);
-    text-decoration: none;
-    transition: var(--transition);
-}
- 
-a:hover {
-    color: var(--primary-700);
-}
- 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
- 
-/* ===== UTILITIES ===== */
-.container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-}
- 
-.section-header {
-    text-align: center;
-    margin-bottom: var(--space-xxl);
-}
- 
-.section-header h2 {
-    margin-bottom: var(--space-sm);
-}
- 
-.section-header p {
-    font-size: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
- 
-.btn {
-    display: inline-block;
-    padding: var(--space-sm) var(--space-lg);
-    border: none;
-    border-radius: var(--border-radius);
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition);
-    text-align: center;
-}
- 
-.btn-primary {
-    background-color: var(--primary-500);
-    color: var(--neutral-50);
-}
- 
-.btn-primary:hover {
-    background-color: var(--primary-700);
-    color: var(--neutral-50);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(116, 88, 68, 0.2);
-}
- 
-.btn-primary:active {
-    transform: scale(0.98);
-}
- 
-/* ===== NAVIGATION ===== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(253, 251, 248, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid var(--neutral-100);
-    transition: var(--transition);
-}
- 
-.navbar.scrolled {
-    background-color: rgba(253, 251, 248, 0.98);
-    box-shadow: var(--shadow);
-}
- 
-.nav-container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-}
- 
-.nav-logo .logo-link {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--neutral-900);
-    text-decoration: none;
-}
- 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: var(--space-lg);
-}
- 
-.nav-link {
-    color: var(--neutral-900);
-    font-weight: 500;
-    text-decoration: none;
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-}
- 
-.nav-link:hover {
-    background-color: var(--neutral-100);
-    color: var(--primary-500);
-}
- 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
- 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--neutral-900);
-    margin: 3px 0;
-    transition: var(--transition);
-    border-radius: 2px;
-}
- 
-/* ===== HERO SECTION ===== */
-.hero {
-    height: 100vh;
-    min-height: 600px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-}
- 
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-50) 100%);
-    background-image: url('../imgs/spoon_rings_hero_9.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -2;
-}
- 
-.hero-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(65, 58, 52, 0.3);
-    z-index: -1;
-}
- 
-.hero-content {
-    z-index: 1;
-    max-width: 800px;
-    padding: 0 var(--space-lg);
-}
- 
-.hero-title {
-    color: var(--neutral-50);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-bottom: var(--space-md);
-}
- 
-.hero-subtitle {
-    font-size: 24px;
-    font-style: italic;
-    color: var(--neutral-50);
-    margin-bottom: var(--space-xl);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
- 
-.hero-scroll-indicator {
-    position: absolute;
-    bottom: var(--space-xl);
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-}
- 
-.scroll-arrow {
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--neutral-50);
-    border-top: none;
-    border-left: none;
-    transform: rotate(45deg);
-}
- 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
+
+// ===== PRODUCT DATA =====
+const products = [
+    {
+        id: 1,
+        name: "AMBRE",
+        price: "30€",
+        material: "Argenté",
+        description: "Une bague délicate façonnée à partir d'une勺子 en argent massif, présentant des reflets naturels unique.",
+        image: "imgs/ambre 2.jpg",
+        images: ["imgs/ambre 2.jpg", "imgs/ambre 1.jpg", "imgs/ambre 3.jpg"],
+        category: "argenté"
+    },
+    {
+        id: 2,
+        name: "CHIC",
+        price: "35€",
+        material: "Argenté",
+        description: "Le cuivre氧化é naturellement offre cette teinte chaleureuse si caractéristique des pièces authentiques.",
+        image: "imgs/chic 2.jpg",
+        images: ["imgs/chic 2.jpg", "imgs/chic 1.jpg", "imgs/chic 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 3,
+        name: "EVE",
+        price: "40€",
+        material: "Argenté",
+        description: "L'élégance industrielle de l'acier stainless sublimée par un travail artisanal précis.",
+        image: "imgs/eve 1.jpg",
+        images: ["imgs/eve 1.jpg", "imgs/eve2.JPG", "imgs/eve 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 4,
+        name: "CLE DE SOL",
+        price: "38€",
+        material: "Argenté",
+        description: "Une勺子 vintage transformée en bague au caractère unique, avec ses petites imperfections qui font son charme.",
+        image: "imgs/Clé de sol 1.jpg",
+        images: ["imgs/Clé de sol 1.jpg", "imgs/Clé de sol 2.JPG", "imgs/Clé de sol 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 5,
+        name: "FEUILLE D'ARGENT",
+        price: "32€",
+        material: "Argenté",
+        description: "La chaleur du cuivre unveil des nuances terres qui évoluent avec le temps pour un aspect toujours plus authentique.",
+        image: "imgs/Feuille d argent 1.jpg",
+        images: ["imgs/Feuille d argent 1.jpg", "imgs/Feuille d argent 2.JPG", "imgs/Feuille d argent 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 6,
+        name: "REINE",
+        price: "42€",
+        material: "Argenté",
+        description: "La pureté des lignes moderns Meets l'authenticité du travail artisanal pour un résultat épuré.",
+        image: "imgs/Reine 1.jpg",
+        images: ["imgs/Reine 1.jpg", "imgs/Reine 2.JPG", "imgs/Reine 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 7,
+        name: "EGYPTE",
+        price: "48€",
+        material: "Argenté",
+        description: "Une bague en argent poli transformée en bague qui capture et reflète la lumière avec subtilité.",
+        image: "imgs/Egypte 1.jpg",
+        images: ["imgs/Egypte 1.jpg", "imgs/Egypte 2.JPG", "imgs/Egypte 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 8,
+        name: "COURONNE",
+        price: "35€",
+        material: "Argenté",
+        description: "La patine naturelle du cuivre révèle des tons chauds évoquant les couleurs de l'automne.",
+        image: "imgs/Couronne 1.jpg",
+        images: ["imgs/Couronne 1.jpg", "imgs/Couronne 2.JPG", "imgs/Couronne 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 9,
+        name: "GUITARE ARGENT",
+        price: "38€",
+        material: "Argenté",
+        description: "Le raffinement de l'aciess stainless Combine avec la simplicité d'un design intemporel.",
+        image: "imgs/Guitare argent 1.jpg",
+        images: ["imgs/Guitare argent 1.jpg", "imgs/Guitare argent 2.JPG", "imgs/Guitare argent 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 10,
+        name: "ANGE",
+        price: "50€",
+        material: "argenté",
+        description: "Une bague d'époque révèle toute sa noblesse transformée en bague au cachet authentique.",
+        image: "imgs/ange 1.jpg",
+        images: ["imgs/ange 1.jpg", "imgs/ange2.JPG", "imgs/ange 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 11,
+        name: "ARABESQUE",
+        price: "36€",
+        material: "Argenté",
+        description: "Lecuivre poli crée un éclar naturel qui illumine chaque gestes de la main.",
+        image: "imgs/arabesque 1.jpg",
+        images: ["imgs/arabesque 1.jpg", "imgs/arabesque2.JPG", "imgs/arabesque3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 12,
+        name: "BELLA",
+        price: "41€",
+        material: "Argenté",
+        description: "Lunion harmonieuse entre technologie moderne et savoir-faire artisanal traditionnels.",        
+        image: "imgs/bella 1.jpg",
+        images: ["imgs/bella 1.jpg", "imgs/bella 2.JPG", "imgs/bella 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 13,
+        name: "ALICE",
+        price: "47€",
+        material: "Argenté",
+        description: "La douceur et l'élégance d'une bague en argent massif transformée avec délicatesse.",
+        image: "imgs/alice 1.jpg",
+        images: ["imgs/alice 1.jpg", "imgs/alice 2.jpg", "imgs/alice 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 14,
+        name: "BRUXELLES",
+        price: "34€",
+        material: "doré",
+        description: "Les nuances ambrées du cuivre au cours de son processus d'oxydation naturelle.",
+        image: "imgs/bruxelles 1.jpg",
+        images: ["imgs/bruxelles 1.jpg", "imgs/bruxelles 2.JPG", "imgs/bruxelles 3.JPG"],
+        category: "doré"
+    },
+    {
+        id: 15,
+        name: "CHAT",
+        price: "39€",
+        material: "Argenté",
+        description: "L'éclat froid et élégant de l'aciess stainlesspolishé avec soin artisanal.",
+        image: "imgs/chat 1.jpg",
+        images: ["imgs/chat 1.jpg", "imgs/chat 2.JPG", "imgs/chat 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 16,
+        name: "CHEVAL",
+        price: "49€",
+        material: "Argenté",
+        description: "Les reflets lunaires d'une勺子 en argent sillage transformée en bague mystique.",
+        image: "imgs/cheval 1.jpg",
+        images: ["imgs/cheval 1.jpg", "imgs/cheval 2.JPG", "imgs/cheval 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 17,
+        name: "CHLOE",
+        price: "33€",
+        material: "Argenté",
+        description: "La chaleur terre à terre du cuivre avec ses nuances ocres et rougeatres naturelles.",
+        image: "imgs/chloe 1.jpg",
+        images: ["imgs/chloe 1.jpg", "imgs/chloe 2.JPG", "imgs/chloe 3.JPG"],
+        category: "Argenté"
+    },
+    {
+        id: 18,
+        name: "DAMIER",
+        price: "40€",
+        material: "Argenté",
+        description: "Le brillant mirror-like de l'aciess obtenu par un polissage artisanal patient.",
+        image: "imgs/damier 1.jpg",
+        images: ["imgs/damier 1.jpg", "imgs/damier 2.JPG", "imgs/damier 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 19,
+        name: "FEUILLE OR",
+        price: "46€",
+        material: "doré",
+        description: "La profondeur mysté ese d'une勺子 en argent patiné par le temps et l'usage.",
+        image: "imgs/feuille or 1.jpg",
+        images: ["imgs/feuille or 1.jpg", "imgs/feuille or 2.JPG", "imgs/feuille or 3.JPG"],
+        category: "doré"
+    },
+    {
+        id: 20,
+        name: "MARGUERITE",
+        price: "37€",
+        material: "Argenté",
+        description: "La noblesse naturelle du cuivre revealée par un travail respectueux de ses propriétés.",
+        image: "imgs/marguerite 1.jpg",
+        images: ["imgs/marguerite 1.jpg", "imgs/marguerite 2.JPG", "imgs/marguerite 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 21,
+        name: "FLEUR",
+        price: "43€",
+        material: "Argenté",
+        description: "La pureté des formes modernes s'allie à l'authenticité du matériau et du savoir-faire.",
+        image: "imgs/fleur 1.jpg",
+        images: ["imgs/fleur 1.jpg", "imgs/fleur 2.JPG", "imgs/fleur 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 22,
+        name: "PAPILLON",
+        price: "51€",
+        material: "Argenté",
+        description: "L'éclat Stellaire d'une勺子 premium en argent massif transformée avec excellence.",
+        image: "imgs/papillon 1.jpg",
+        images: ["imgs/papillon 1.jpg", "imgs/papillon 2.JPG", "imgs/papillon 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 23,
+        name: "PIERRE",
+        price: "38€",
+        material: "Argenté",
+        description: "La majesté des tons ambrés que seul le temps peut révéler au cuivre de qualité.",
+        image: "imgs/pierre 1.jpg",
+        images: ["imgs/pierre 1.jpg", "imgs/pierre 2.JPG", "imgs/pierre 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 24,
+        name: "PRINCESSE",
+        price: "44€",
+        material: "doré",
+        description: "La robustesse du titane jointe à l'élégance d'un design contemporaine et épuré.",
+        image: "imgs/princesse 1.JPG",
+        images: ["imgs/princesse 1.JPG", "imgs/princesse 2.JPG", "imgs/princesse 3.JPG"],
+        category: "doré"
+    },
+    {
+        id: 25,
+        name: "GUITARE OR",
+        price: "52€",
+        material: "doré",
+        description: "La clarté crystallise d'un argent de qualité supérieure transformé en bague d'exception.",
+        image: "imgs/guitare or 1.jpg",
+        images: ["imgs/guitare or 1.jpg", "imgs/guitare or 2.JPG", "imgs/guitare or 3.JPG"],
+        category: "doré"
+    },
+    {
+        id: 26,
+        name: "REINE OR",
+        price: "36€",
+        material: "doré",
+        description: "Les nuances solaires du cuivre qui évoluent au fil des saisons et de l'usage.",
+        image: "imgs/reine or 1.jpg",
+        images: ["imgs/reine or 1.jpg", "imgs/reine or 2.JPG", "imgs/reine or 3.JPG"],
+        category: "doré"
+    },
+    {
+        id: 27,
+        name: "ZEBRE",
+        price: "41€",
+        material: "Argenté",
+        description: "L'élégance Inoxydable de l'aciess avec un finish soigné qui resist aux épreuves du temps.",
+        image: "imgs/zebre 1.jpg",
+        images: ["imgs/zebre 1.jpg", "imgs/zebre 2.JPG", "imgs/zebre 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 28,
+        name: "VAGUE",
+        price: "55€",
+        material: "Argenté",
+        description: "La rareté du platine meeting l'artisanat d'exception pour une pièce decollection.",
+        image: "imgs/vague 1.jpg",
+        images: ["imgs/vague 1.jpg", "imgs/vague 2.JPG", "imgs/vague 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 29,
+        name: "CHIC 2",
+        price: "35€",
+        material: "argenté",
+        description: "Les tons de feu sacré que révèle le cuivre lors de son oxydation naturelle contrôlée.",
+        image: "imgs/chic2 1.jpg",
+        images: ["imgs/chic2 1.jpg", "imgs/chic2 2.JPG", "imgs/chic2 3.JPG"],
+        category: "argenté"
+    },
+    {
+        id: 30,
+        name: "LYS",
+        price: "42€",
+        material: "Argenté",
+        description: "La noblesse de l'aciess dévoilée par un processus artisanal qui elevate le matériau.",
+        image: "imgs/lys12.jpg",
+        images: ["imgs/lys12.jpg", "imgs/lys1 1.JPG", "imgs/lys1 3.JPG"],
+        category: "argenté"
     }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
+];
+
+// ===== GALLERY =====
+function initGallery() {
+    const galleryGrid = document.getElementById('gallery-grid');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    
+    // Create product cards
+    function createProductCard(product) {
+        return `
+            <div class="product-card" data-category="${product.category}" data-id="${product.id}">
+                <img src="${encodeURI(product.image)}" alt="${product.name}" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="product-price">${product.price}</div>
+                    <p class="product-description">${product.description}</p>
+                    <span class="product-material">${product.material}</span>
+                </div>
+            </div>
+        `;
     }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
+    
+    // Render all products
+    function renderProducts(productsToRender) {
+        galleryGrid.innerHTML = productsToRender.map(createProductCard).join('');
+        
+        // Add animation to new cards
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add('fade-in-up');
+        });
+
+        // Replace hover thumbnails with a click-to-open modal that shows product images
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const id = parseInt(this.getAttribute('data-id'));
+                const product = products.find(p => p.id === id);
+                if (!product) return;
+
+                // Prefer product-specific images array (up to 3). Fallback to main + others in category.
+                let images = [];
+                if (product.images && product.images.length) {
+                    images = product.images.slice(0, 3);
+                } else {
+                    images = [product.image];
+                    const others = products.filter(p => p.category === product.category && p.id !== id).slice(0, 2).map(p => p.image);
+                    images.push(...others);
+                }
+
+                // Build modal (lightweight): show spinner while images load via fetch+blob, then fade images in
+                const modal = document.createElement('div');
+                modal.className = 'product-image-modal';
+                modal.innerHTML = `
+                    <div class="product-image-modal-inner">
+                        <button class="product-image-modal-close" aria-label="Fermer">&times;</button>
+                        <div class="product-image-modal-spinner">Chargement...</div>
+                        <div class="product-image-modal-gallery">
+                            ${images.map(src => `<div class="modal-image-wrap"><img data-src="${encodeURI(src)}" alt="${product.name}"></div>`).join('')}
+                        </div>
+                        <div class="product-image-modal-caption">${product.name} — ${product.price}</div>
+                    </div>
+                `;
+
+                // Append and lock scroll
+                document.body.appendChild(modal);
+                const previousOverflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+
+                // Close handlers
+                function closeModal() {
+                    if (modal && modal.parentNode) modal.parentNode.removeChild(modal);
+                    document.body.style.overflow = previousOverflow || 'auto';
+                    document.removeEventListener('keydown', onKey);
+                }
+
+                function onKey(e) {
+                    if (e.key === 'Escape') closeModal();
+                }
+
+                modal.querySelector('.product-image-modal-close').addEventListener('click', closeModal);
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) closeModal();
+                });
+                document.addEventListener('keydown', onKey);
+
+                // Load modal images: assign encoded src IMMEDIATELY for fast display, then fetch blob in background
+                const modalSpinner = modal.querySelector('.product-image-modal-spinner');
+                const imgEls = modal.querySelectorAll('.product-image-modal-gallery img');
+
+                let anyLoaded = false;
+                imgEls.forEach((imgEl, idx) => {
+                    const dataSrc = imgEl.getAttribute('data-src');
+                    imgEl.style.opacity = '0';
+                    imgEl.loading = 'eager';
+
+                    if (!dataSrc) {
+                        imgEl.style.opacity = '1';
+                        return;
+                    }
+
+                    // Assign encoded src IMMEDIATELY so browser starts loading right away (fast display on mobile)
+                    imgEl.src = dataSrc;
+                    
+                    // Fade in when native load completes
+                    imgEl.onload = function() {
+                        imgEl.style.opacity = '1';
+                        if (!anyLoaded) {
+                            anyLoaded = true;
+                            modalSpinner.style.display = 'none';
+                        }
+                    };
+
+                    // Try fetch->blob in background (non-blocking) to optimize further if it helps
+                    fetch(dataSrc)
+                        .then(response => { if (!response.ok) throw new Error('status ' + response.status); return response.blob(); })
+                        .then(blob => {
+                            const objectUrl = URL.createObjectURL(blob);
+                            imgEl._objectUrl = objectUrl;
+                            imgEl.src = objectUrl; // replace with blob URL if fetch succeeds
+                        })
+                        .catch(err => {});
+
+                    // Error handler as fallback
+                    imgEl.onerror = function() {
+                        this.style.opacity = '1';
+                        if (!anyLoaded) {
+                            anyLoaded = true;
+                            modalSpinner.style.display = 'none';
+                        }
+                    };
+                });
+            });
+        });
     }
+    
+    // Initial render
+    renderProducts(products);
+    
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter products
+            const filter = this.getAttribute('data-filter');
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(product => product.category === filter);
+            
+            // Animate out current cards
+            const currentCards = document.querySelectorAll('.product-card');
+            currentCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+            });
+            
+            // Render filtered products after animation (defer to idle callback to avoid blocking main thread)
+            const idle = window.requestIdleCallback || function(cb){ return setTimeout(cb, 100); };
+            idle(() => renderProducts(filteredProducts));
+        });
+    });
 }
- 
-/* ===== FADE ANIMATION ===== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease-out forwards;
-}
- 
-.fade-in:nth-child(1) {
-    animation-delay: 0.2s;
-}
- 
-.fade-in:nth-child(2) {
-    animation-delay: 0.4s;
-}
- 
-.fade-in:nth-child(3) {
-    animation-delay: 0.6s;
-}
- 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+// ===== VIDEO MODAL =====
+function initVideoModal() {
+    const videoWrapper = document.getElementById('video-wrapper');
+    const videoThumbnail = document.getElementById('video-thumbnail');
+    const playButton = document.getElementById('play-button');
+    const videoModal = document.getElementById('video-modal');
+    const modalClose = document.getElementById('modal-close');
+    const videoEmbed = document.getElementById('video-embed');
+    
+    // YouTube video URL (replace with actual video)
+    const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0";
+    
+    // Open video modal
+    playButton.addEventListener('click', function() {
+        videoEmbed.innerHTML = `<iframe src="${videoUrl}" frameborder="0" allowfullscreen></iframe>`;
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Close video modal
+    function closeModal() {
+        videoModal.classList.remove('active');
+        videoEmbed.innerHTML = '';
+        document.body.style.overflow = 'auto';
     }
+    
+    modalClose.addEventListener('click', closeModal);
+    
+    // Close on outside click
+    videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) {
+            closeModal();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 }
- 
-/* ===== ABOUT SECTION ===== */
-.about {
-    padding: var(--space-xxxl) 0;
-    background-color: var(--neutral-100);
+
+// ===== CONTACT FORM =====
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Simple validation
+        if (!data.name || !data.email || !data.subject || !data.message) {
+            showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(data.email)) {
+            showNotification('Veuillez entrer une adresse email valide.', 'error');
+            return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Envoi en cours...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            showNotification('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.', 'success');
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // Create email link
+            const subject = encodeURIComponent(data.subject);
+            const body = encodeURIComponent(
+                `Nom: ${data.name}\n` +
+                `Email: ${data.email}\n` +
+                `Téléphone: ${data.phone || 'Non renseigné'}\n\n` +
+                `Message:\n${data.message}`
+            );
+            const mailtoLink = `mailto:contact@lieva-creation.fr?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+            }, 1500);
+            
+        }, 2000);
+    });
 }
- 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xxl);
-    align-items: center;
+
+// ===== UTILITY FUNCTIONS =====
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
- 
-.about-text h2 {
-    margin-bottom: var(--space-lg);
-    color: var(--neutral-900);
-}
- 
-.about-text p {
-    font-size: 20px;
-    margin-bottom: var(--space-md);
-}
- 
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
-    margin-top: var(--space-xl);
-}
- 
-.stat {
-    text-align: center;
-}
- 
-.stat h3 {
-    font-size: 36px;
-    color: var(--primary-500);
-    margin-bottom: var(--space-xs);
-}
- 
-.stat p {
-    color: var(--neutral-500);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 14px;
-}
- 
-.about-image {
-    position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
- 
-.about-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: var(--transition);
-}
- 
-.about-image:hover img {
-    transform: scale(1.05);
-}
- 
-/* ===== GALLERY SECTION ===== */
-.gallery {
-    padding: var(--space-xxxl) 0;
-    background-color: var(--neutral-50);
-}
- 
-.gallery-filters {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-xl);
-    flex-wrap: wrap;
-}
- 
-.filter-btn {
-    padding: var(--space-xs) var(--space-md);
-    border: 2px solid var(--neutral-100);
-    background-color: transparent;
-    color: var(--neutral-500);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 500;
-}
- 
-.filter-btn.active,
-.filter-btn:hover {
-    background-color: var(--primary-500);
-    color: var(--neutral-50);
-    border-color: var(--primary-500);
-}
- 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-lg);
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-}
- 
-.product-card {
-    background-color: var(--neutral-100);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-}
- 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(116, 88, 68, 0.2);
-}
- 
-.product-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: var(--transition);
-    overflow: hidden;
-}
- 
-.product-card:hover .product-image {
-    transform: scale(1.05);
-}
- 
-/* Hover thumbnails (3 images) overlay */
-.hover-thumbnails {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    display: flex;
-    gap: 8px;
-    z-index: 5;
-    pointer-events: none;
-}
- 
-.hover-thumbnails img {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-    transform: translateY(6px) scale(0.98);
-    opacity: 0;
-    transition: transform 220ms ease, opacity 220ms ease;
-}
- 
-.product-card:hover .hover-thumbnails img {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    pointer-events: auto;
-}
- 
-@media (max-width: 768px) {
-    .hover-thumbnails {
-        right: 8px;
-        top: 8px;
+
+function showNotification(message, type) {
+    // Remove existing notification
+    const existing = document.querySelector('.notification');
+    if (existing) {
+        existing.remove();
     }
- 
-    .hover-thumbnails img {
-        width: 80px;
-        height: 80px;
-    }
+    
+    // Create notification
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span>${message}</span>
+            <button class="notification-close">&times;</button>
+        </div>
+    `;
+    
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 10000;
+            max-width: 400px;
+            padding: 16px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            animation: slideInRight 0.3s ease-out;
+        }
+        
+        .notification-success {
+            background-color: var(--success);
+            color: white;
+        }
+        
+        .notification-error {
+            background-color: var(--error);
+            color: white;
+        }
+        
+        .notification-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(notification);
+    
+    // Close notification
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.remove();
+    });
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
 }
- 
-.product-image-modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0,0,0,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 12000;
-    padding: 24px;
+
+// ===== ANIMATIONS =====
+function initAnimations() {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.about-content, .process-step, .contact-content, .footer-content');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Add CSS for scroll animations
+    const animationStyle = document.createElement('style');
+    animationStyle.textContent = `
+        .about-content,
+        .process-step,
+        .contact-content,
+        .footer-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(animationStyle);
 }
- 
-.product-image-modal-inner {
-    background: white;
-    border-radius: 8px;
-    max-width: 1100px;
-    width: 100%;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
-    overflow: hidden;
-    padding: 20px;
-}
- 
-.product-image-modal-close {
-    position: absolute;
-    right: 28px;
-    top: 20px;
-    background: none;
-    border: none;
-    font-size: 34px;
-    color: #333;
-    cursor: pointer;
-}
- 
-.product-image-modal-gallery {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 8px 6px 8px;
-}
- 
-.product-image-modal-gallery .modal-image-wrap {
-    flex: 1 1 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-    background: #f5f5f5;
-    min-height: 300px;
-}
- 
-.product-image-modal-gallery img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 6px;
-}
- 
-.product-image-modal-caption {
-    text-align: center;
-    padding: 12px 8px 4px 8px;
-    color: var(--neutral-900);
-    font-weight: 600;
-}
- 
-@media (max-width: 900px) {
-    .product-image-modal-inner {
-        padding: 12px;
-    }
- 
-    .product-image-modal-gallery {
-        flex-direction: column;
-        gap: 12px;
-    }
- 
-    .product-image-modal-gallery img {
-        max-height: 200px;
-    }
- 
-    .product-image-modal-gallery .modal-image-wrap {
-        min-height: 200px;
-    }
-}
- 
-.product-info {
-    padding: var(--space-lg);
-}
- 
-.product-name {
-    font-size: 20px;
-    color: var(--neutral-900);
-    margin-bottom: var(--space-sm);
-}
- 
-.product-price {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--primary-500);
-    margin-bottom: var(--space-md);
-}
- 
-.product-description {
-    color: var(--neutral-500);
-    font-size: 16px;
-    margin-bottom: var(--space-md);
-}
- 
-.product-material {
-    display: inline-block;
-    padding: 4px var(--space-sm);
-    background-color: var(--neutral-50);
-    color: var(--neutral-500);
-    font-size: 14px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 500;
-}
- 
-/* ===== PROCESS SECTION ===== */
-.process {
-    padding: var(--space-xxxl) 0;
-    background-color: var(--neutral-100);
-}
- 
-.process-steps {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xxl);
-}
- 
-.step {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: var(--space-xl);
-    align-items: center;
-    padding: var(--space-xl);
-    background-color: var(--neutral-50);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
- 
-.step:nth-child(even) {
-    direction: rtl;
-}
- 
-.step:nth-child(even) .step-content,
-.step:nth-child(even) .step-image {
-    direction: ltr;
-}
- 
-.step-number {
-    font-family: var(--font-heading);
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--primary-500);
-    text-align: center;
-}
- 
-.step-content h3 {
-    margin-bottom: var(--space-md);
-    color: var(--neutral-900);
-}
- 
-.step-content p {
-    font-size: 18px;
-}
- 
-.step-image {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
- 
-.step-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
- 
-/* ===== VIDEO SECTION ===== */
-.video-section {
-    padding: var(--space-xxxl) 0;
-    background-color: var(--neutral-50);
-}
- 
-.video-container {
-    max-width: 960px;
-    margin: 0 auto;
-    text-align: center;
-}
- 
-.video-wrapper {
-    position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: var(--space-lg);
-}
- 
-.video-thumbnail {
-    width: 100%;
-    height: 540px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: var(--transition);
-}
- 
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
-}
- 
-.play-button:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-}
- 
-.play-button svg circle {
-    transition: var(--transition);
-}
- 
-.play-button:hover svg circle {
-    fill: var(--primary-700);
-}
- 
-.video-description {
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto;
-    color: var(--neutral-500);
-}
- 
-/* ===== MODAL ===== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-}
- 
-.modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-}
- 
-.modal-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: var(--neutral-50);
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1;
-}
- 
-.modal-close:hover {
-    color: var(--primary-500);
-}
- 
-.video-embed iframe {
-    width: 800px;
-    height: 450px;
-    border: none;
-    border-radius: var(--border-radius);
-}
- 
-/* ===== CONTACT SECTION ===== */
-.contact {
-    padding: var(--space-xxxl) 0;
-    background-color: var(--neutral-100);
-}
- 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xxl);
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-}
- 
-.contact-info h2 {
-    margin-bottom: var(--space-lg);
-    color: var(--neutral-900);
-}
- 
-.contact-info p {
-    font-size: 18px;
-    margin-bottom: var(--space-xl);
-}
- 
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-}
- 
-.contact-item h4 {
-    color: var(--primary-500);
-    margin-bottom: var(--space-xs);
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
- 
-.contact-item p {
-    color: var(--neutral-900);
-    margin: 0;
-}
- 
-.contact-form {
-    background-color: var(--neutral-50);
-    padding: var(--space-xl);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
- 
-.form-group {
-    margin-bottom: var(--space-lg);
-}
- 
-.form-group label {
-    display: block;
-    margin-bottom: var(--space-xs);
-    color: var(--neutral-900);
-    font-weight: 500;
-}
- 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: var(--space-sm);
-    border: 2px solid var(--neutral-100);
-    border-radius: var(--border-radius);
-    font-family: var(--font-body);
-    font-size: 16px;
-    background-color: var(--neutral-50);
-    transition: var(--transition);
-}
- 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-500);
-    box-shadow: 0 0 0 3px rgba(161, 122, 93, 0.1);
-}
- 
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
- 
-/* ===== FOOTER ===== */
-.footer {
-    background-color: var(--neutral-900);
-    color: var(--neutral-50);
-    padding: var(--space-xxl) 0 var(--space-lg);
-}
- 
-.footer-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--space-xl);
-    margin-bottom: var(--space-xl);
-}
- 
-.footer-brand h3 {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    margin-bottom: var(--space-sm);
-    color: var(--neutral-50);
-}
- 
-.footer-brand p {
-    color: var(--neutral-500);
-    font-style: italic;
-}
- 
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-}
- 
-.footer-column h4 {
-    color: var(--primary-500);
-    margin-bottom: var(--space-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 14px;
-}
- 
-.footer-column ul {
-    list-style: none;
-}
- 
-.footer-column li {
-    margin-bottom: var(--space-xs);
-}
- 
-.footer-column a {
-    color: var(--neutral-500);
-    text-decoration: none;
-    transition: var(--transition);
-}
- 
-.footer-column a:hover {
-    color: var(--primary-500);
-}
- 
-.footer-bottom {
-    border-top: 1px solid var(--neutral-500);
-    padding-top: var(--space-lg);
-    text-align: center;
-    color: var(--neutral-500);
-    font-size: 14px;
-}
- 
-/* ===== RESPONSIVE DESIGN ===== */
- 
-/* Tablet */
-@media (max-width: 1024px) {
-    :root {
-        --space-xxxl: 96px;
-        --space-xxl: 72px;
-    }
-   
-    h1 {
-        font-size: 48px;
-    }
-   
-    h2 {
-        font-size: 36px;
-    }
-   
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-    }
-   
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-    }
-   
-    .process-steps {
-        gap: var(--space-xl);
-    }
-   
-    .step {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-        text-align: center;
-    }
-   
-    .step:nth-child(even) {
-        direction: ltr;
-    }
-   
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-   
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-    }
-   
-    .footer-links {
-        grid-template-columns: 1fr 1fr;
+
+// ===== LAZY LOADING ENHANCEMENT =====
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
     }
 }
- 
-/* Mobile */
-@media (max-width: 768px) {
-    :root {
-        --space-xxxl: 72px;
-        --space-xxl: 48px;
-        --space-xl: 32px;
-        --space-lg: 24px;
-        --space-md: 16px;
-        --space-sm: 12px;
-    }
-   
-    body {
-        font-size: 16px;
-    }
-   
-    h1 {
-        font-size: 40px;
-    }
-   
-    h2 {
-        font-size: 32px;
-    }
-   
-    h3 {
-        font-size: 20px;
-    }
-   
-    .container {
-        padding: 0 var(--space-md);
-    }
-   
-    /* Hero mobile - Fix background-attachment issue */
-    .hero-background {
-        background-attachment: scroll;
-    }
-   
-    /* Navigation mobile */
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 80px;
-        flex-direction: column;
-        background-color: var(--neutral-50);
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-        padding: var(--space-lg) 0;
-        gap: var(--space-md);
-    }
-   
-    .nav-menu.active {
-        left: 0;
-    }
-   
-    .hamburger {
-        display: flex;
-    }
-   
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-   
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-   
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-   
-    /* Hero mobile */
-    .hero-title {
-        font-size: 36px;
-    }
-   
-    .hero-subtitle {
-        font-size: 18px;
-    }
-   
-    /* About mobile */
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-   
-    /* Gallery mobile */
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-   
-    .gallery-filters {
-        gap: var(--space-xs);
-    }
-   
-    .filter-btn {
-        font-size: 14px;
-        padding: var(--space-xs) var(--space-sm);
-    }
-   
-    /* Process mobile */
-    .step {
-        padding: var(--space-lg);
-    }
-   
-    .step-number {
-        font-size: 36px;
-    }
-   
-    /* Video mobile */
-    .video-embed iframe {
-        width: 100%;
-        height: 250px;
-    }
-   
-    /* Contact mobile */
-    .contact-form {
-        padding: var(--space-lg);
-    }
-   
-    /* Footer mobile */
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-   
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-   
-    .stat h3 {
-        font-size: 28px;
-    }
+
+// Initialize lazy loading
+initLazyLoading();
+
+
+
+
+
+
+// ===== PERFORMANCE OPTIMIZATIONS =====
+function initPerformanceOptimizations() {
+    // Debounce scroll events
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(function() {
+            // Scroll-based animations can be added here
+        }, 10);
+    });
+    
+    // Preload critical images
+    const criticalImages = [
+        'imgs/spoon_rings_hero_9.jpg',
+        'imgs/eve 1.jpg'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    });
 }
- 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 32px;
-    }
-   
-    .hero-subtitle {
-        font-size: 16px;
-    }
-   
-    .video-embed iframe {
-        height: 200px;
-    }
-   
-    .about-text p {
-        font-size: 18px;
-    }
-   
-    .step-content p {
-        font-size: 16px;
-    }
-}
- 
-/* ===== ANIMATIONS ===== */
-@media (prefers-reduced-motion: no-preference) {
-    .product-card {
-        animation: fadeInUp 0.6s ease-out;
-    }
-   
-    .step {
-        animation: fadeInLeft 0.8s ease-out;
-    }
-   
-    .step:nth-child(even) {
-        animation: fadeInRight 0.8s ease-out;
-    }
-}
- 
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
- 
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
- 
-/* ===== PRINT STYLES ===== */
-@media print {
-    .navbar,
-    .hero-scroll-indicator,
-    .btn,
-    .contact-form,
-    .footer {
-        display: none;
-    }
-   
-    .hero {
-        height: auto;
-        min-height: auto;
-    }
-   
-    .section-header {
-        break-inside: avoid;
-    }
-   
-    .product-card,
-    .step {
-        break-inside: avoid;
-        box-shadow: none;
-        border: 1px solid var(--neutral-100);
-    }
-}
+
+// Initialize performance optimizations
+initPerformanceOptimizations();
+
+console.log('LIEVA CREATION website initialized successfully!');
