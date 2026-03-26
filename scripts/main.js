@@ -168,7 +168,7 @@ const products = [
         name: "ANGE",
         price: "15€",
         material: "Acier inoxydable",
-        description: "Choix idéal pour ceux qui aimant les bijoux épurés.",
+        description: "Choix idéal pour ceux qui aiment les bijoux épurés.",
         image: "imgs/ange 1.jpg",
         images: ["imgs/ange 1.jpg", "imgs/ange2.JPG", "imgs/ange 3.JPG"],
         category: "Acier inoxydable"
@@ -201,17 +201,17 @@ const products = [
         description: "Un geste d’affection éternel.",
         image: "imgs/alice 1.jpg",
         images: ["imgs/alice 1.jpg", "imgs/alice 2.jpg", "imgs/alice 3.JPG"],
-        category: "doré"
+        category: "Acier inoxydable"
     },
     {
         id: 14,
         name: "BRUXELLES",
         price: "20€",
-        material: " ",
+        material: "Acier inoxydable ",
         description: "Design bicolore, donne un caractère moderne te structuré Acier inoxydable.",
         image: "imgs/bruxelles 1.jpg",
         images: ["imgs/bruxelles 1.jpg", "imgs/bruxelles 2.JPG", "imgs/bruxelles 3.JPG"],
-        category: "doré"
+        category: "Acier inoxydable"
     },
     {
         id: 15,
@@ -238,7 +238,7 @@ const products = [
         name: "CHLOE",
         price: "15€",
         material: "Acier inoxydable",
-        description: "LUn moment d’amour.",
+        description: "Un moment d’amour.",
         image: "imgs/chloe 1.jpg",
         images: ["imgs/chloe 1.jpg", "imgs/chloe 2.JPG", "imgs/chloe 3.JPG"],
         category: "Acier inoxydable"
@@ -278,7 +278,7 @@ const products = [
         name: "FLEUR",
         price: "15€",
         material: "Acier inoxydable",
-        description: "L’emblème de l’amour et de l’elegance.",
+        description: "L’emblème de l’amour et de l’élégance.",
         image: "imgs/fleur 1.jpg",
         images: ["imgs/fleur 1.jpg", "imgs/fleur 2.JPG", "imgs/fleur 3.JPG"],
         category: "Acier inoxydable"
@@ -308,7 +308,7 @@ const products = [
         name: "PRINCESSE",
         price: "20€",
         material: " ",
-        description: "Un petit trésor ramené du passé;U ne pièce rare et précieuse Metel doré.",
+        description: "Un petit trésor ramené du passé, une pièce rare et précieuse.",
         image: "imgs/princesse 1.JPG",
         images: ["imgs/princesse 1.JPG", "imgs/princesse 2.JPG", "imgs/princesse 3.JPG"],
         category: "doré"
@@ -549,7 +549,7 @@ function initVideoModal() {
     const videoEmbed = document.getElementById('video-embed');
     
     // YouTube video URL (replace with actual video)
-    const videoUrl = "https://www.youtube.com/embed/SUVyhhWml1Q?autoplay=1&rel=0";
+    const videoUrl = "https://www.youtube.com/watch?v=0OiO5o_yYpo?autoplay=1&rel=0";
     
     // Open video modal
     playButton.addEventListener('click', function() {
