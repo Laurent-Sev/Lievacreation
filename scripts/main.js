@@ -549,7 +549,7 @@ function initVideoModal() {
     const videoEmbed = document.getElementById('video-embed');
     
     // YouTube video URL (replace with actual video)
-    const videoUrl = "https://www.youtube.com/watch?v=0OiO5o_yYpo?autoplay=1&rel=0";
+    const videoUrl = "https://www.youtube.com/embed/0OiO5o_yYpo?autoplay=1&rel=0";
     
     // Open video modal
     playButton.addEventListener('click', function() {
